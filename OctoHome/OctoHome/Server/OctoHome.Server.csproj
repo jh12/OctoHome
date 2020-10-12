@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,9 +14,12 @@
     <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\OctoHome.Hue\OctoHome.Hue.csproj" />
+    <ProjectReference Include="..\..\OctoHome.Shared.DTOs\OctoHome.Shared.DTOs.csproj" />
     <ProjectReference Include="..\Client\OctoHome.Client.csproj" />
     <ProjectReference Include="..\Shared\OctoHome.Shared.csproj" />
   </ItemGroup>

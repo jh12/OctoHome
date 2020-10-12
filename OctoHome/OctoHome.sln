@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoHome.Client", "OctoHome
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoHome.Shared", "OctoHome\Shared\OctoHome.Shared.csproj", "{8C9DA362-A736-4E33-BE79-B8FD8F257F32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoHome.Hue", "OctoHome.Hue\OctoHome.Hue.csproj", "{C668D9F9-F525-4482-B0ED-3E3B22A9E51E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoHome.Shared.DTOs", "OctoHome.Shared.DTOs\OctoHome.Shared.DTOs.csproj", "{61466B74-8429-49CB-A692-94D64D7FF340}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{8C9DA362-A736-4E33-BE79-B8FD8F257F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C9DA362-A736-4E33-BE79-B8FD8F257F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C9DA362-A736-4E33-BE79-B8FD8F257F32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C668D9F9-F525-4482-B0ED-3E3B22A9E51E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C668D9F9-F525-4482-B0ED-3E3B22A9E51E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C668D9F9-F525-4482-B0ED-3E3B22A9E51E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C668D9F9-F525-4482-B0ED-3E3B22A9E51E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61466B74-8429-49CB-A692-94D64D7FF340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61466B74-8429-49CB-A692-94D64D7FF340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61466B74-8429-49CB-A692-94D64D7FF340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61466B74-8429-49CB-A692-94D64D7FF340}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
