@@ -4,18 +4,23 @@ namespace OctoHome.Shared.DTOs.Hue
 {
     public class HueScene
     {
-        public string Id { get; }
-        public string Name { get; }
-        public string[] Lights { get; }
-        public string Owner { get; }
-        public string Picture { get; }
-        public bool? Recycle { get; }
-        public bool? Locked { get; }
-        public int? Version { get; }
-        public DateTime? LastUpdated { get; }
-        public bool? StoreLightState { get; }
-        public TimeSpan? TransitionTime { get; }
-        public string Group { get; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string[] Lights { get; set; }
+        public string Owner { get; set; }
+        public string Picture { get; set; }
+        public bool? Recycle { get; set; }
+        public bool? Locked { get; set; }
+        public int? Version { get; set; }
+        public DateTime? LastUpdated { get; set; }
+        public bool? StoreLightState { get; set; }
+        public TimeSpan? TransitionTime { get; set; }
+        public string Group { get; set; }
+
+        public HueScene()
+        {
+            
+        }
 
         public HueScene(string id, string name, string[] lights, string owner, string picture, bool? recycle, bool? locked, int? version, DateTime? lastUpdated, bool? storeLightState, TimeSpan? transitionTime, string group)
         {

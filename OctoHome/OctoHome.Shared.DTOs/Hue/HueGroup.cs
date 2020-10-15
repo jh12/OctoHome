@@ -2,14 +2,19 @@
 {
     public class HueGroup
     {
-        public string Id { get; }
-        public string Name { get; }
-        public HueGroupType? GroupType { get; }
-        public HueRoomClass? RoomClass { get; }
-        public string ModelId { get; }
-        public string[] LightIds { get; }
-        public bool? Recycle { get; }
-        public string[] Sensors { get; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public HueGroupType? GroupType { get; set; }
+        public HueRoomClass? RoomClass { get; set; }
+        public string ModelId { get; set; }
+        public string[] LightIds { get; set; }
+        public bool? Recycle { get; set; }
+        public string[] Sensors { get; set; }
+
+        public HueGroup()
+        {
+            
+        }
 
         public HueGroup(string id, string name, HueGroupType? groupType, HueRoomClass? roomClass, string modelId, string[] lightIds, bool? recycle, string[] sensors)
         {
