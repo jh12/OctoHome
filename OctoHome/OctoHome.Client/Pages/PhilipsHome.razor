@@ -1,0 +1,68 @@
+﻿@page "/hue"
+@using OctoHome.Client.Services.Interfaces
+@using OctoHome.Client.Components
+@using OctoHome.Shared.DTOs.Hue
+
+<h3>PhilipsHome</h3>
+<Row>
+    <CardDeck>
+        @for (int i = 0; i < Groups.Length; i++)
+        {
+            Background background = Groups[i] == _selectedGroup ? Background.Info : Background.Dark;
+
+            <HueGroupComponent @bind-Group="Groups[i]" CardBackground="@background" Clicked="@GroupClicked"></HueGroupComponent>
+        }
+    </CardDeck>
+</Row>
+
+<Row Margin="Margin.Is5.FromTop">
+    <CardDeck>
+        @for (int i = 0; i < Lights.Length; i++)
+        {
+            <HueLightComponent @bind-Light="Lights[i]" SwitchOn="@SwitchOn" SwitchOff="@SwitchOff"></HueLightComponent>
+        }
+    </CardDeck>
+</Row>
+
+@code {
+    [Inject]
+    protected IPhilipsHueService HueService { get; set; }
+
+    private IDictionary<string, HueLight[]> _lightsByGroup = new Dictionary<string, HueLight[]>();
+    private HueGroup _selectedGroup;
+
+    protected HueGroup[] Groups { get; set; } = new HueGroup[0];
+    protected HueLight[] Lights { get; set; } = new HueLight[0];
+
+    protected override async Task OnInitializedAsync()
+    {
+        HueLight[] lights = await HueService.GetLights();
+        Groups = await HueService.GetGroups();
+
+        foreach (HueGroup hueGroup in Groups)
+        {
+            HueLight[] hueLights = lights.Where(l => hueGroup.LightIds.Contains(l.Id)).ToArray();
+            _lightsByGroup.Add(hueGroup.Id, hueLights);
+        }
+    }
+
+    private async Task SwitchOn(HueLight light)
+    {
+        Console.WriteLine($"Switch on {light.Name}");
+        await HueService.SwitchLightOn(light);
+    }
+
+    private async Task SwitchOff(HueLight light)
+    {
+        Console.WriteLine($"Switch off {light.Name}");
+        await HueService.SwitchLightOff(light);
+    }
+
+    private async Task GroupClicked(HueGroup group)
+    {
+        Console.WriteLine($"Parent got group clicked {group.Name}");
+        Lights = _lightsByGroup[group.Id];
+
+        _selectedGroup = group;
+    }
+}

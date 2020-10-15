@@ -1,0 +1,68 @@
+﻿@using OctoHome.Shared.DTOs.Hue
+
+<Card Margin="Margin.Is3.FromBottom" Background="Background.Secondary">
+    <CardBody>
+        <a class="stretched-link text-decoration-none d-flex flex-column" style="cursor: pointer" @onclick="@LightClicked" @onclick:preventDefault>
+            <span class="d-flex justify-content-center">
+                <i class="@GetIcon() fa-2x text-white"></i>
+            </span>
+            <span class="mt-auto text-center">
+                <h6 class="text-white">@Light.Name</h6>
+            </span>
+        </a>
+    </CardBody>
+</Card>
+
+
+@code {
+    [Parameter]
+    public HueLight Light { get; set; }
+
+    [Parameter]
+    public EventCallback<HueLight> LightChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<HueLight> SwitchOn { get; set; }
+
+    [Parameter]
+    public EventCallback<HueLight> SwitchOff { get; set; }
+
+    private bool IsSwitchOn { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        IsSwitchOn = Light.State.On;
+    }
+
+    async Task OnSwitch(bool value)
+    {
+        IsSwitchOn = value;
+        Light.State.On = value;
+
+        if (value)
+            await SwitchOn.InvokeAsync(Light);
+        else
+            await SwitchOff.InvokeAsync(Light);
+    }
+
+    private string GetIcon()
+    {
+        if (Light.State.On)
+            return "fas fa-lightbulb";
+        else
+            return "far fa-lightbulb";
+    }
+
+    private async Task LightClicked()
+    {
+        IsSwitchOn = !IsSwitchOn;
+        Light.State.On = IsSwitchOn;
+
+        Console.WriteLine($"Switching {Light.Name} {IsSwitchOn}");
+
+        if (IsSwitchOn)
+            await SwitchOn.InvokeAsync(Light);
+        else
+            await SwitchOff.InvokeAsync(Light);
+    }
+}

@@ -18,10 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\OctoHome.Hue\OctoHome.Hue.csproj" />
-    <ProjectReference Include="..\..\OctoHome.Shared.DTOs\OctoHome.Shared.DTOs.csproj" />
-    <ProjectReference Include="..\Client\OctoHome.Client.csproj" />
-    <ProjectReference Include="..\Shared\OctoHome.Shared.csproj" />
+    <ProjectReference Include="..\OctoHome.Hue\OctoHome.Hue.csproj" />
+    <ProjectReference Include="..\OctoHome.Shared.DTOs\OctoHome.Shared.DTOs.csproj" />
+    <ProjectReference Include="..\OctoHome.Client\OctoHome.Client.csproj" />
+    <ProjectReference Include="..\OctoHome.Shared\OctoHome.Shared.csproj" />
   </ItemGroup>
 
 

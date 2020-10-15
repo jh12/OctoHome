@@ -1,0 +1,59 @@
+﻿@using OctoHome.Shared.DTOs.Hue
+
+<Card Background="@CardBackground" WhiteText="true">
+    <CardBody Padding="Padding.Is1.FromTop.Is2">
+        <a class="stretched-link text-decoration-none d-flex flex-column" style="cursor: pointer" @onclick="@GroupClicked" @onclick:preventDefault>
+            <span class="d-flex justify-content-center">
+                <i class="@GetRoomIcon() fa-3x text-white"></i>
+            </span>
+            <span class="mt-auto text-center">
+                <h4 class="text-white">@Group.Name</h4>
+            </span>
+        </a>
+    </CardBody>
+</Card>
+
+@code {
+    [Parameter]
+    public HueGroup Group { get; set; }
+
+    [Parameter]
+    public EventCallback<HueGroup> GroupChanged { get; set; }
+
+    [Parameter]
+    public HueLight[] Lights { get; set; }
+
+    [Parameter]
+    public EventCallback<HueLight[]> LightsChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<HueGroup> Clicked { get; set; }
+
+    [Parameter]
+    public Background CardBackground { get; set; } = Background.Dark;
+
+    public string GetRoomIcon()
+    {
+        switch (Group.RoomClass)
+        {
+            case HueRoomClass.LivingRoom:
+                return "fas fa-couch";
+            case HueRoomClass.Kitchen:
+                return "fas fa-sink";
+            case HueRoomClass.Bathroom:
+                return "fas fa-toilet";
+            case HueRoomClass.Bedroom:
+                return "fas fa-bed";            
+            case HueRoomClass.Hallway:
+                return "fas fa-door-open";
+            default:
+                return "fas fa-chess-rook";
+        }
+    }
+
+    public async Task GroupClicked()
+    {
+        Console.WriteLine($"Clicked on {Group.Name}");
+        await Clicked.InvokeAsync(Group);
+    }
+}

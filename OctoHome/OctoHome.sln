@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoHome.Server", "OctoHome\Server\OctoHome.Server.csproj", "{8E865FDC-13B3-4443-A114-DFCA4AB81E6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OctoHome.Server", "OctoHome.Server\OctoHome.Server.csproj", "{8E865FDC-13B3-4443-A114-DFCA4AB81E6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoHome.Client", "OctoHome\Client\OctoHome.Client.csproj", "{47D61B5A-BA5F-4622-8AA0-652498E56667}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OctoHome.Client", "OctoHome.Client\OctoHome.Client.csproj", "{47D61B5A-BA5F-4622-8AA0-652498E56667}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoHome.Shared", "OctoHome\Shared\OctoHome.Shared.csproj", "{8C9DA362-A736-4E33-BE79-B8FD8F257F32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OctoHome.Shared", "OctoHome.Shared\OctoHome.Shared.csproj", "{8C9DA362-A736-4E33-BE79-B8FD8F257F32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoHome.Hue", "OctoHome.Hue\OctoHome.Hue.csproj", "{C668D9F9-F525-4482-B0ED-3E3B22A9E51E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OctoHome.Hue", "OctoHome.Hue\OctoHome.Hue.csproj", "{C668D9F9-F525-4482-B0ED-3E3B22A9E51E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoHome.Shared.DTOs", "OctoHome.Shared.DTOs\OctoHome.Shared.DTOs.csproj", "{61466B74-8429-49CB-A692-94D64D7FF340}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OctoHome.Shared.DTOs", "OctoHome.Shared.DTOs\OctoHome.Shared.DTOs.csproj", "{61466B74-8429-49CB-A692-94D64D7FF340}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

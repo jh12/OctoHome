@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OctoHome.Shared.DTOs\OctoHome.Shared.DTOs.csproj" />
-    <ProjectReference Include="..\OctoHome\Shared\OctoHome.Shared.csproj" />
+    <ProjectReference Include="..\OctoHome.Shared\OctoHome.Shared.csproj" />
   </ItemGroup>
 
 </Project>
